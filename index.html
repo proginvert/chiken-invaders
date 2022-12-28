@@ -1,6 +1,12 @@
-<a id="game-1" href="game.html">1 Уровень</a><br>
-<a id="game-2" href="game2.html">2 Уровень</a><br>
-<a  href="settings.html">Настройки</a><br>
+<link rel="stylesheet" href="style.css" type="text/css">
+<div class="cntr">
+<div class="cntr2">
+<a href="game.html"><button id="game-1"class="cntrbut">1 Уровень</button></a><br>
+<a href="game2.html"><button id="game-2"class="cntrbut">2 Уровень</button></a><br>
+<button class="cntrbut" onclick="window.location.href = 'settings.html';">Настройки</button><br>
+
+</div><img id="imgp" src="player (2).png" width="350px" height="350px" style="position:absolute;top:350px;margin-top: 50px;" alt="player"></div>
+
 <script>
 GetCookie = function(name) {
 var cookie = " " + document.cookie;
@@ -26,5 +32,21 @@ return(setStr);
 var game1 = localStorage.getItem("game1");
 if(game1 === 'done')
 document.getElementById('game-1').innerHTML = 'Вы прошли первою часть!';
+var hhdth = 50
+var shhdth = 1
+//var hhdth2 = 270
+setInterval(function(){
+if(hhdth<100)
+shhdth+=0.1
+if(hhdth>100)
+shhdth-=0.1
 
+hhdth+=shhdth
+//document.getElementById('ressboss').innerHTML = '';
+
+//var h1 = document.createElement('h1');
+//h1.innerHTML = 'Ресс босс: ' + Player.list[selfid].ress_boss;
+//document.getElementById('ressboss').appendChild(h1);
+imgp.style.margin = hhdth
+},1000/25)
 </script>
